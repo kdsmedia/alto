@@ -2,14 +2,14 @@ from telegram.ext import Updater, CommandHandler
 
 # Fungsi untuk menangani perintah /start
 def start(update, context):
-    update.message.reply_text('Halo! Selamat datang di bot Telegram sederhana.')
+    update.message.reply_text('Halo! Selamat datang di MAXWOW.')
 
 # Fungsi untuk menangani perintah /help
 def help(update, context):
-    update.message.reply_text('Bot ini adalah bot sederhana yang dapat melakukan beberapa perintah.')
+    update.message.reply_text('Bot ini dapat melakukan beberapa perintah.')
 
 def main():
-    TOKEN = "token_bot_anda"  # Ganti dengan token bot Anda
+    TOKEN = "6747435706:AAHoDiKWjONOBo_YWZWpzloeSo4sWd3alLQ"  # Ganti dengan token bot Anda
     updater = Updater(TOKEN, use_context=True)
     dp = updater.dispatcher
 
