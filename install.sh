@@ -18,7 +18,7 @@ pkg install -y python git || display_error "Gagal menginstal dependensi."
 # Clone repositori bot Telegram
 echo "Mengunduh bot Telegram..."
 git clone https://github.com/kdsmedia/alto.git || display_error "Gagal mengunduh bot Telegram."
-cd NAMA_REPO || display_error "Folder bot Telegram tidak ditemukan."
+cd alto || display_error "Folder bot Telegram tidak ditemukan."
 
 # Instal dependensi Python
 echo "Memulai instalasi dependensi Python..."
@@ -26,6 +26,6 @@ pip install -r requirements.txt || display_error "Gagal menginstal dependensi Py
 
 # Menjalankan bot Telegram
 echo "Menjalankan bot Telegram..."
-python bot_telegram.py || display_error "Gagal menjalankan bot Telegram."
+python alto.py || display_error "Gagal menjalankan bot Telegram."
 
 echo "Instalasi selesai."
