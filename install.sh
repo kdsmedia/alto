@@ -17,7 +17,7 @@ pkg install -y python git || display_error "Gagal menginstal dependensi."
 
 # Clone repositori bot Telegram
 echo "Mengunduh bot Telegram..."
-git clone https://github.com/NAMA_PENGGUNA/NAMA_REPO.git || display_error "Gagal mengunduh bot Telegram."
+git clone https://github.com/kdsmedia/alto.git || display_error "Gagal mengunduh bot Telegram."
 cd NAMA_REPO || display_error "Folder bot Telegram tidak ditemukan."
 
 # Instal dependensi Python
