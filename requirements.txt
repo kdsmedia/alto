@@ -1,3 +1,70 @@
+impor panda sebagai pd 
+impor numpy sebagai np 
+impor matplotlib.pyplot sebagai plt 
+impor seaborn sebagai sns 
+impor plotly.express sebagai px 
+impor scipy.stats sebagai statistik 
+impor statsmodels.api sebagai sm 
+impor sklearn 
+impor yellowbrick 
+impor wordcloud 
+impor nltk 
+impor spacy 
+impor transformator 
+impor streamlit as st 
+
+# Memuat dan membersihkan data data
+ = pd.read_csv( 'data.csv' ) 
+data.dropna(inplace= True ) 
+
+# Statistik deskriptif 
+cetak ( 'Data Summary' ) 
+print (data.describe()) 
+
+# Visualisasi data
+ sns. histplot(data[ 'usia' ], kde= Salah , bins= 10 ) 
+plt.title( 'Distribusi Usia' ) 
+plt.show() 
+px.scatter(data, x= 'pendapatan' , y= 'usia' , warna = 'gender' , title= 'Pendapatan vs. Usia' ) 
+
+# Analisis korelasi
+ corr_matrix = data.corr() 
+sns.heatmap(corr_matrix, annot= True , cmap= 'coolwarm' ) 
+plt.title( 'Matriks Korelasi' ) 
+plt .show() 
+
+# Statistik analisis statistik
+ , p = stats.ttest_ind(data[data[ 'gender' ]== 'M' ][ 'income' ], data[data[ 'gender' ]== 'F' ] 'pendapatan' ]) 
+print ( uji f'T: statistic= {stat} , pvalue= {p} ' ) 
+
+# Pembelajaran mesin
+ X = data[[ 'age' , 'income' ]] 
+y = data[ 'gender' ] 
+model = sklearn.linear_model.LogisticRegression() 
+model.fit(X, y) 
+visualizer = yellowbrick.classifier.classification_report(model, X, y) 
+visualizer.show() 
+
+# Analisis teks
+ text = 'Ini adalah contoh teks untuk teks token analisis
+ = nltk.word_tokenize(teks) 
+print ( f'Teks yang diberi token: {tokens} ') 
+nlp = spacy.load( 'en_core_web_sm' ) 
+doc = nlp(teks) 
+
+untuk token di dokumen: 
+    print (token.text, token.pos_) 
+
+model = transformers.pipeline( 'analisis-sentimen' ) 
+hasil = model(teks) [ 0 ] 
+print ( f'Analisis sentimen: {hasil[ "label" ]} , skor= {hasil[ "skor" ]} ' ) 
+
+# Aplikasi Streamlit
+ st.title( 'Aplikasi Analisis Data' ) 
+st.write( 'Data Ringkasan' ) 
+st.write(data.describe())
+
+
 python-telegram-bot
 tensorflow==2.3.1
 uvicorn==0.12.2
